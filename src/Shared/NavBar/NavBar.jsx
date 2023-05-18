@@ -26,7 +26,7 @@ const NavBar = () => {
           </div>
           <div className='flex'>
             <img src={logo} alt="" className='w-12'/>
-          <Link className="btn btn-ghost normal-case text-2xl font-bold">HERO TOYS</Link>
+          <Link className="btn btn-ghost normal-case lg:text-3xl text-2xl font-bold">HERO TOYS</Link>
           </div>
         </div>
         
@@ -36,7 +36,7 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">user</a>
+        <button className="btn btn-primary">User</button>
         </div>
       </div>
     );
