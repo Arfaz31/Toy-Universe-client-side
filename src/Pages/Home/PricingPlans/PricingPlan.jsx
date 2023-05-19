@@ -10,11 +10,11 @@ const PricingPlan = () => {
           We are Offering Competitive <br />
           Prices for Our Clients
         </h1>
-        <p className="h-1 w-20 bg-indigo-700 mx-auto"></p>
+        <p className="h-1 w-28 bg-indigo-700 mx-auto"></p>
       </div>
 
 
-      <div className="grid lg:grid-cols-3 grid-cols-1 w-3/4 mx-auto mb-20">
+      <div className="grid lg:grid-cols-3 grid-cols-1 w-3/4 mx-auto mb-32">
 
         <div className="bg-slate-100 p-10">
           <h2 className="text-xl text-indigo-700 font-bold mb-2">Basic Plan</h2>
@@ -66,7 +66,7 @@ const PricingPlan = () => {
             </div>
            <div className="flex justify-between">
            <p>Bulk Option</p>
-           <p className="text-red-600"><FaTimes/></p>
+           <p className="text-indigo-700 "><FaCheck/></p>
            </div>
             <div className="flex justify-between">
             <p>Customize Toys</p>
@@ -95,11 +95,11 @@ const PricingPlan = () => {
             </div>
            <div className="flex justify-between">
            <p>Bulk Option</p>
-           <p className="text-red-600"><FaTimes/></p>
+           <p className="text-indigo-700 "><FaCheck/></p>
            </div>
             <div className="flex justify-between">
             <p>Customize Toys</p>
-            <p className="text-red-600"><FaTimes/></p>
+            <p className="text-indigo-700 "><FaCheck/></p>
             </div>
           </div>
         </div>
