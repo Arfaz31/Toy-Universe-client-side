@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "../../assets/logo/superhero.png";
+import logo from "../../assets/logo/ironman.png";
 const Footer = () => {
   return (
-    <div className="bg-base-200">
+    <div className="bg-slate-100">
       <footer className="footer p-10  text-base-content">
         <div>
           <img src={logo} alt="" className="w-12" />

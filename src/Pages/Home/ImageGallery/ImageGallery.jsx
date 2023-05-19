@@ -30,7 +30,9 @@ const ImageGallery = () => {
       <div className="absolute inset-0">
         <img className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40" src={gallery.image} alt="" />
       </div>
+
       <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 text-center text-slate-200 [transform:rotateY(180deg)] [backface-visibility:hidden]">
+        
         <div className=" min-h-full text-start  py-20 px-5 ">
           <h1 className="text-2xl font-bold pb-1">{gallery.title}</h1>
           <p className="text-base pb-1">{gallery.short_description}</p>
