@@ -1,0 +1,67 @@
+[
+    {
+      "id": "001",
+      "image": "https://i.ibb.co/VWw22cF/massimo-virgilio-SGB6o-QJQlc-Y-unsplash.jpg",
+      "title": "Iron Man Action Figure",
+      "short_description": "Highly detailed Iron Man action figure with light-up arc reactor.",
+      "price": "$29.99"
+    },
+    {
+      "id": "002",
+      "image": "https://i.ibb.co/SXgPMgN/07f28826be9e695f87f6305b4647bb6e.jpg",
+      "title": "Captain America Shield",
+      "short_description": "Full-size replica of Captain America's shield with adjustable straps.",
+      "price": "$39.99"
+    },
+    {
+        "id": "003",
+        "image": "https://i.ibb.co/ZBfHP2n/nik-Oklzj82ffs-Q-unsplash.jpg",
+        "title": "Spider-Man Action Figure",
+        "short_description": "Detailed Spider-Man action figure with web-slinging accessories.",
+        "price": "$24.99"
+      },
+      {
+        "id": "004",
+        "image": "https://i.ibb.co/J25pxwq/mulyadi-BSan-z2go3-A-unsplash-1.jpg",
+        "title": "Thanos Helmet",
+        "short_description": "Authentic Thanos helmet replica with LED light-up eyes and adjustable fit.",
+        "price": "$49.99"
+      },
+      {
+        "id": "005",
+        "image": "https://i.ibb.co/nwgvtm2/mulyadi-l-QTPP1eg60o-unsplash-2.jpg",
+        "title": "Superhero Action Figure",
+        "short_description": "Powerful superhero action figure with moveable joints.",
+        "price": "$85"
+      },
+      {
+        "id": "006",
+        "image": "https://i.ibb.co/KxMs70y/mulyadi-bs-Mn-Wtsko-CU-unsplash.jpg",
+        "title": "Stormtrooper Helmet",
+        "short_description": "Full-scale Stormtrooper helmet replica with adjustable fit and voice-changing feature.",
+        "price": "$39.99"
+      },
+      {
+        "id": "007",
+        "image": "https://i.ibb.co/7j05wMj/king-lip-PXYJD-e-L2d-Q-unsplash-1.jpg",
+        "title": "Groot Action Figure",
+        "short_description": "Poseable Groot action figure with detailed sculpting and movable branches.",
+        "price": "$24.99"
+      },
+      {
+        "id": "008",
+        "image": "https://i.ibb.co/NNqWmk5/mulyadi-qcy-OBGLs-GJM-unsplash-1.jpg",
+        "title": "Deadpool Action Figure",
+        "short_description": "Poseable Deadpool action figure with a variety of weapons and accessories.",
+        "price": "$29.99"
+      },
+      {
+        "id": "009",
+        "image": "https://i.ibb.co/cCMpdwj/mulyadi-ASFd-VZ4aj-Ns-unsplash.jpg",
+        "title": "Lightsaber Replica",
+        "short_description": "Authentic lightsaber replica with customizable blade colors and sound effects.",
+        "price":"$ 49.99"
+      }
+
+  ]
+  

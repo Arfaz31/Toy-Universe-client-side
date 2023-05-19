@@ -9,7 +9,7 @@ const Banner = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Welcome To Hero Toys</h1>
             <p className="mb-5 text-lg">Hero Toys store is full of action figure toys. Explore our best collection & choose your favourite Hero.</p>
-            <button className="btn btn-primary mr-3">Discover More</button>
+            <button className="btn btn-primary mr-3">Shop Now</button>
             <button className="btn btn-secondary">Latest Toys</button>
             {/* <button className="btn btn-outline btn-primary">Latest Toys</button> */}
           </div>
