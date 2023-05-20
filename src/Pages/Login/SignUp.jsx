@@ -4,8 +4,10 @@ import signUp from "../../assets/login/signup.json";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../../UseTitle/UseTitle";
 
 const SignUp = () => {
+  useTitle('SignUp')
   const { createUser, userUpdateData } = useContext(AuthContext);
   const navigate = useNavigate();
   const [success, setSuccess] = useState("");

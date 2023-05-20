@@ -3,8 +3,10 @@ import Banner from './Banner';
 import ImageGallery from './ImageGallery/ImageGallery';
 import PricingPlan from './PricingPlans/PricingPlan';
 import TeamMembers from './TeamMembers/TeamMembers';
+import useTitle from '../../UseTitle/UseTitle';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner/>
