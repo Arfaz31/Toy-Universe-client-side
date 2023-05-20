@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../assets/logo/ironman.png'
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const NavBar = () => {
+  const{user, logOut} = useContext(AuthContext)
+
+  const handleLogOut = () =>{
+    logOut()
+    .then(() => {})
+    .catch(error => console.log(error))
+  }
     const navItems = 
     <>
     <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/allToys">All Toys</NavLink></li>
-    <li><NavLink to="/addToy">Add A Toy</NavLink></li>
-    <li><NavLink to="/myToys">My Toys</NavLink></li>
-    <li><NavLink to="/login">Login</NavLink></li>
+    <li><NavLink to="/allToys">All Toys</NavLink></li>    
+ {user?.email?
+<> 
+<li><NavLink to="/addToy">Add A Toy</NavLink></li>
+ <li><NavLink to="/myToys">My Toys</NavLink></li>
+ <li><button onClick={handleLogOut}>Logout</button></li>
+ </>
+:
+ <li><NavLink to="/login">Login</NavLink></li>
+}
     <li><NavLink to="/blog">Blogs</NavLink></li>
     </>
 

@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import Lottie from "lottie-react";
 import login from "../../assets/login/login.json";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Login = () => {
+const {logIn} = useContext(AuthContext)
+
+const handleLogIn = event =>{
+  event.preventDefault()
+  const form = event.target;
+  const email = form.email.value;
+  const password = form.password.value
+console.log(email, password)
+
+ logIn(email, password)
+ .then(result =>{
+  const user =result.user
+  console.log(user)
+})
+.catch(error => console.log(error))
+
+}
+
+
   return (
     <div className="mx-24 mt-12 mb-24 ">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 ">
@@ -17,7 +37,7 @@ const Login = () => {
             <div className="hero-content flex-col lg:flex-row py-10">
               <div className="card w-full max-w-sm shadow-2xl bg-base-100 px-10">
                 <div className="card-body">
-                  <form>
+                  <form onSubmit={handleLogIn}>
                     <div className="form-control">
                       <label className="label">
                         <span className="label-text">Email</span>
@@ -34,16 +54,12 @@ const Login = () => {
                         <span className="label-text">Password</span>
                       </label>
                       <input
-                        type="text"
+                        type="password"
                         placeholder="password"
                         name="password"
                         className="input input-bordered"
                       />
-                      <label className="label">
-                        <a href="#" className="label-text-alt link link-hover">
-                          Forgot password?
-                        </a>
-                      </label>
+                    
                     </div>
                     <div className="form-control mt-6">
                       <input
@@ -52,6 +68,7 @@ const Login = () => {
                         value="Login"
                       />
                     </div>
+                    <p className="text-center">Or Login with</p>
                     <div className=" w-max mx-auto mt-3">
                       <button
                         className="btn btn-outline btn-primary"

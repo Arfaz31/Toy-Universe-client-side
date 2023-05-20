@@ -1,9 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Lottie from "lottie-react";
 import signUp from "../../assets/login/signup.json";
 import { Link } from "react-router-dom";
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const SignUp = () => {
+
+const {createUser} = useContext(AuthContext)
+
+
+const handleSignUp = event => {
+  event.preventDefault()
+  const form = event.target;
+  const name = form.name.value;
+  const email = form.email.value;
+  const password = form.password.value
+  const  photo = form.photo.value
+  console.log(name, email, password, photo)
+
+
+  createUser(email, password)
+  .then(result =>{
+    const user =result.user
+    console.log(user)
+  })
+  .catch(error => console.log(error))
+  
+}
+
     return (
         <div className="mx-24 mt-12 mb-24 ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 ">
@@ -16,7 +40,7 @@ const SignUp = () => {
               <div className="hero-content flex-col lg:flex-row py-10">
                 <div className="card w-full max-w-sm shadow-2xl bg-base-100 px-10">
                   <div className="card-body">
-                    <form>
+                    <form onSubmit={handleSignUp}>
                       <div className="form-control">
                         <label className="label">
                           <span className="label-text">Name</span>
@@ -44,7 +68,7 @@ const SignUp = () => {
                           <span className="label-text">Password</span>
                         </label>
                         <input
-                          type="text"
+                          type="password"
                           placeholder="password"
                           name="password"
                           className="input input-bordered"
