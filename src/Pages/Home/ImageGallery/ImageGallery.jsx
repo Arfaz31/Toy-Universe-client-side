@@ -5,7 +5,7 @@ const ImageGallery = () => {
   const [galleries, setGalleries] = useState([]);
 
   useEffect(() => {
-    fetch("galleries.json")
+    fetch("http://localhost:5000/photos")
       .then((res) => res.json())
       .then((data) => setGalleries(data));
   }, []);
@@ -23,7 +23,7 @@ const ImageGallery = () => {
       </div>
       <div className="grid grid-cols-1 mt-12 mb-24 lg:grid-cols-3 gap-3 w-full lg:w-3/4 lg:mx-auto ml-7">
         {galleries.map((gallery) => (
-          <div key={gallery.id}>
+          <div key={gallery._id}>
 
 <div className="group h-96 w-80 pb-4 [perspective:1000px]">
     <div class="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
