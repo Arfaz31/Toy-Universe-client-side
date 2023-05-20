@@ -11,7 +11,7 @@ const TeamMembers = () => {
 
 <div className="text-center mb-14">
         <h2 className="text-indigo-700 font-bold text-xl mb-2">TEAM MEMBERS</h2>
-        <h1 className="font-bold lg:text-3xl text-2xl mb-4 text-gray-700">
+        <h1 className="font-bold lg:text-3xl text-xl mb-4 text-gray-700">
         Professional Stuffs Always Ready to <br />
         Satisfy Our Customer With Their Unique Skills
         </h1>
