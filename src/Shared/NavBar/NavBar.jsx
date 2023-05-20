@@ -23,7 +23,7 @@ const NavBar = () => {
         <NavLink to="/blog">Blogs</NavLink>
       </li>
       <li>
-        <NavLink to="/allToys">All Toys</NavLink>
+        <NavLink to="/allToy">All Toys</NavLink>
       </li>
       {user?.email ? (
         <>
@@ -31,7 +31,7 @@ const NavBar = () => {
             <NavLink to="/addToy">Add A Toy</NavLink>
           </li>
           <li>
-            <NavLink to="/myToys">My Toys</NavLink>
+            <NavLink to="/myToy">My Toy</NavLink>
           </li>
 
           {user && (
@@ -48,7 +48,7 @@ const NavBar = () => {
                   <img
                     src={user.photoURL}
                     alt=""
-                    className=" rounded-xl object-cover w-8 h-8"
+                    className=" rounded-full object-cover w-8 h-8"
                   />
                 </a>
                 <Tooltip id="my-tooltip" />
