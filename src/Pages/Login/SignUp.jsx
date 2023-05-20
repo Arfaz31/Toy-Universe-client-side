@@ -6,7 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const SignUp = () => {
 
-const {createUser} = useContext(AuthContext)
+const {createUser, userUpdateData} = useContext(AuthContext)
 
 
 const handleSignUp = event => {
@@ -23,6 +23,14 @@ const handleSignUp = event => {
   .then(result =>{
     const user =result.user
     console.log(user)
+    userUpdateData(result.user, name, photo)
+    .then(()=>{ 
+      console.log("update")
+    })
+    .catch(error=>{
+      console.log(error.message)
+    })
+
   })
   .catch(error => console.log(error))
   
