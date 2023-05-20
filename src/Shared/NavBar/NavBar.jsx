@@ -33,8 +33,11 @@ const NavBar = () => {
           <li>
             <NavLink to="/myToy">My Toy</NavLink>
           </li>
+          <li className="">
+            <button onClick={handleLogOut}>Logout</button>
+          </li>
 
-          {user && (
+          {/* {user && (
             <div className="flex justify-center items-center "> 
               <li className="">
                 <button onClick={handleLogOut}>Logout</button>
@@ -54,7 +57,7 @@ const NavBar = () => {
                 <Tooltip id="my-tooltip" />
               </div>
             </div>
-          )}
+          )} */}
         </>
       ) : (
         <li>
@@ -91,7 +94,7 @@ const NavBar = () => {
             {navItems}
           </ul>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center lg:ml-0 ml-20 ">
           <img src={logo} alt="" className="" />
           <Link className="text-gray-700 normal-case lg:text-4xl text-2xl font-bold ">
             HERO TOYS
@@ -99,12 +102,27 @@ const NavBar = () => {
         </div>
       </div>
 
-      <div className="navbar-center hidden lg:flex navbar-end p-2">
-        <ul className="menu menu-horizontal px-1">{navItems}</ul>
+      <div className="navbar-center hidden lg:flex p-2">
+        <ul className="menu menu-horizontal px-1 lg:ml-72">{navItems}</ul>
       </div>
-      {/* <div className="navbar-end">
 
-      </div> */}
+      <div className="lg:navbar-end ml-28 lg:ml-0">
+        {user && (
+          <div className="">
+            <a
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={user.displayName}
+            >
+              <img
+                src={user.photoURL}
+                alt=""
+                className=" rounded-full object-cover w-10 h-10"
+              />
+            </a>
+            <Tooltip id="my-tooltip" />
+          </div>
+        )}
+      </div>
     </div>
   );
 };

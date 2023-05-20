@@ -1,16 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Lottie from "lottie-react";
 import login from "../../assets/login/login.json";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
-const {logIn} = useContext(AuthContext)
+const {logIn, googleSignIn} = useContext(AuthContext)
 const navigate = useNavigate()
 const location = useLocation()
 const from = location.state?.from?.pathname || "/"
-
+const [success, setSuccess] = useState("");
+const [error, setError] = useState("");
 
 
 const handleLogIn = event =>{
@@ -25,10 +27,33 @@ console.log(email, password)
   const user =result.user
   console.log(user)
   navigate(from, {replace:true});
+  setSuccess(
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "User Login Successfully",
+      showConfirmButton: false,
+      timer: 1500,
+    })
+  );
 })
-.catch(error => console.log(error))
+.catch(error => {
+  setError(error.message)
+})
 
 }
+
+//google login
+const handleSignInWithGoogle = () => {
+  googleSignIn()
+    .then((result) => {
+      const user = result.user;
+      navigate(from, { replace: true });
+    })
+    .catch((error) => {
+      console.log("error massage", error.massage);
+    });
+};
 
 
   return (
@@ -53,6 +78,7 @@ console.log(email, password)
                         placeholder="email"
                         name="email"
                         className="input input-bordered"
+                        required
                       />
                     </div>
                     <div className="form-control">
@@ -64,6 +90,7 @@ console.log(email, password)
                         placeholder="password"
                         name="password"
                         className="input input-bordered"
+                        required
                       />
                     
                     </div>
@@ -77,6 +104,7 @@ console.log(email, password)
                     <p className="text-center">Or Login with</p>
                     <div className=" w-max mx-auto mt-3">
                       <button
+                      onClick={handleSignInWithGoogle}
                         className="btn btn-outline btn-primary"
                         type="submit"
                       >
@@ -91,6 +119,7 @@ console.log(email, password)
                       Sign Up
                     </Link>
                   </p>
+                  <p className="my-2 text-red-600 text-center">{error}</p>
                 </div>
               </div>
             </div>
