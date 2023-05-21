@@ -95,7 +95,7 @@ const MyToy = () => {
             <td>$ {myToy.rating}</td>
             <td>{myToy.name}</td>
             <th>
-             <Link>
+             <Link to={`/updateToy/${myToy._id}`}>
              <button className="btn btn-primary btn-xs">Update</button>
              </Link>
             </th>
