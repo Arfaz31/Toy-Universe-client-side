@@ -10,7 +10,7 @@ import AddToy from "../AddToy/AddToy";
 import AllToy from "../AllToy/AllToy";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ViewDetails from "../AllToy/ViewDetails";
-import PreviousMap from "postcss/lib/previous-map";
+
 
 const router = createBrowserRouter([
     {
@@ -51,8 +51,8 @@ const router = createBrowserRouter([
         },
         {
           path: '/details/:id',
-          element: <PreviousMap><ViewDetails/></PreviousMap>,
-          loader: (params) => fetch(`http://localhost:5000/addToys/${params.id}`)
+          element:<PrivateRoute><ViewDetails/></PrivateRoute>,
+          loader: ({params}) => fetch(`http://localhost:5000/addToys/${params.id}`)
         }
        
 

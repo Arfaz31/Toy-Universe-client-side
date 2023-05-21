@@ -1,6 +1,6 @@
 import React from "react";
 import useTitle from "../UseTitle/UseTitle";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllToy = () => {
   useTitle("AllToy");
@@ -43,7 +43,9 @@ const AllToy = () => {
             <td>$ {toy.price}</td>
             <td>{toy.quantity}</td>
             <th>
-              <button className="btn btn-primary btn-xs">details</button>
+             <Link to={`/details/${toy._id}`}>
+             <button className="btn btn-primary btn-xs">details</button>
+             </Link>
             </th>
           </tr>
            )}
