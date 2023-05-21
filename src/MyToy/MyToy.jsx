@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import useTitle from '../UseTitle/UseTitle';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const MyToy = () => {
     useTitle('MyToy')
@@ -13,6 +14,40 @@ const MyToy = () => {
         .then(res => res.json())
         .then(data => setMyToys(data))
     } ,[user])
+
+    const handleDelete = (_id) =>{
+        console.log(_id)
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+             fetch(`http://localhost:5000/myToys/${_id}`,{
+                 method: "DELETE"
+               
+             })
+             .then(res => res.json())
+             .then(data => {
+                console.log(data)
+                if(data.deletedCount > 0){
+                    Swal.fire(
+                        'Deleted!',
+                        'Your Toy has been deleted.',
+                        'success'
+                      )
+                      const remaining = myToys.filter(myToy => myToy._id !== _id)
+                      setMyToys(remaining)
+                }
+             })
+            }
+          })
+    }
 
     return (
         <div className="w-max mx-auto ">
@@ -66,7 +101,7 @@ const MyToy = () => {
             </th>
             <th>
              <Link>
-             <button className="btn btn-secondary btn-xs">Delete</button>
+             <button onClick={()=> handleDelete(myToy._id)} className="btn btn-secondary btn-xs">Delete</button>
              </Link>
             </th>
           </tr>
