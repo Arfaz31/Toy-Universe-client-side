@@ -9,6 +9,7 @@ const options = [
     { value: "marvel", label: "Marvel" },
     { value: "avengers", label: "Avengers" },
     { value: "ninja", label: "Ninja" },
+    { value: "transformer", label: "Transformer" },
   ];
 const AddToy = () => {
     useTitle('AddToy')

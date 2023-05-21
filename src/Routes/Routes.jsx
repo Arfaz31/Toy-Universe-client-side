@@ -9,6 +9,8 @@ import MyToy from "../MyToy/MyToy";
 import AddToy from "../AddToy/AddToy";
 import AllToy from "../AllToy/AllToy";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ViewDetails from "../AllToy/ViewDetails";
+import PreviousMap from "postcss/lib/previous-map";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +37,9 @@ const router = createBrowserRouter([
        
         {
           path: '/allToy',
-          element: <AllToy/>
+          element: <AllToy/>,
+          loader: () => fetch('http://localhost:5000/addToys')
+          
         },
         {
           path: '/myToy',
@@ -44,6 +48,11 @@ const router = createBrowserRouter([
         {
           path:'/addToy',
           element: <PrivateRoute><AddToy/></PrivateRoute>,
+        },
+        {
+          path: '/details/:id',
+          element: <PreviousMap><ViewDetails/></PreviousMap>,
+          loader: (params) => fetch(`http://localhost:5000/addToys/${params.id}`)
         }
        
 
