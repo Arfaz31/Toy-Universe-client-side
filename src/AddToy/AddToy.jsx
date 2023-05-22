@@ -41,7 +41,7 @@ const AddToy = () => {
     description
   }
   console.log(addToy)
-fetch('http://localhost:5000/addToys', {
+fetch('https://toy-universe-server-gamma.vercel.app/addToys', {
     method: 'POST',
     headers: {
         'content-type': 'application/json'

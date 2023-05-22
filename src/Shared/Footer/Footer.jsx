@@ -3,7 +3,7 @@ import logo from "../../assets/logo/ironman.png";
 const Footer = () => {
   return (
     <div className="bg-slate-100">
-      <footer className="footer p-10  text-base-content">
+      <footer className="footer p-12  text-base-content">
         <div>
           <img src={logo} alt="" className="w-12" />
           <p>

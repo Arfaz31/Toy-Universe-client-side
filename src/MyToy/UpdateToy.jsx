@@ -24,7 +24,7 @@ const{_id, toyName} = toy
     description
   }
   console.log(updateToy)
-  fetch(`http://localhost:5000/updateToys/${_id}`, {
+  fetch(`https://toy-universe-server-gamma.vercel.app/updateToys/${_id}`, {
     method: 'PUT',
     headers: {
         'content-type': 'application/json'

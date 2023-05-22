@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const PricingPlan = () => {
+
+  useEffect(() =>{
+    AOS.init();
+   }, [])
+
   return (
-    <div>
-      <div className="text-center mb-14">
+    <div className="my-48">
+      <div className="mb-20 bg-slate-200 lg:w-1/2 w-max mx-auto px-3 py-5 text-center" data-aos="fade-down">
         <h2 className="text-indigo-700 font-bold text-xl mb-2">PRICING PLANS</h2>
         <h1 className="font-bold lg:text-3xl text-2xl mb-4 text-gray-700">
-          We are Offering Competitive <br />
+          We are Offering Reasonable <br />
           Prices for Our Clients
         </h1>
         <p className="h-1 w-28 bg-indigo-700 mx-auto"></p>

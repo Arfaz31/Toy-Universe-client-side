@@ -5,9 +5,9 @@ const ViewDetails = () => {
     const detailToy = useLoaderData()
     console.log(detailToy)
     return (
-        <div className='bg-base-200'>
+        <div className='bg-base-200 '>
             <h1 className='text-4xl text-center pt-10 pb-4 font-bold'>View Details Page</h1>
-    <p className='text-center text-lg text-gray-800 pb-5 '>Here you can see the details description of added toys</p>
+    <p className='text-center text-lg text-gray-800  '>Here you can see the details description of added toys</p>
             <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row">
     

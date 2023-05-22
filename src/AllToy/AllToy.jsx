@@ -10,7 +10,7 @@ const AllToy = () => {
   const [searchText, setSearchText] = useState("")
 
   useEffect(() => {
-    fetch('http://localhost:5000/addToys')
+    fetch('https://toy-universe-server-gamma.vercel.app/addToys')
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -19,7 +19,7 @@ const AllToy = () => {
   }, [user]);
 
 const handleSearch = () =>{
-  fetch(`http://localhost:5000/toySearchByText/${searchText}`)
+  fetch(`https://toy-universe-server-gamma.vercel.app/toySearchByText/${searchText}`)
   .then(res => res.json())
   .then((data) => {
     setToys(data)
@@ -33,7 +33,7 @@ const handleSearch = () =>{
       <h2 className="text-center font-bold text-3xl text-gray-600 mt-20 mb-3">All Toy Page</h2>
       <p className="text-center text-lg text-gray-500 mb-12">Here you can see the all toys that are added by seller</p>
 
-      <div className="relative w-1/2 mx-auto mb-8">
+      <div className="relative lg:w-1/2 w-max mx-auto mb-8">
         <input 
         onChange={(e) => setSearchText(e.target.value)}
         type="text" 

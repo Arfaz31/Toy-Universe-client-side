@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import teamOne from '../../../assets/team members/team-1.jpg'
 import teamTwo from '../../../assets/team members/team-2.jpg'
 import teamThree from '../../../assets/team members/team-3.jpg'
 import Marquee from "react-fast-marquee";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const TeamMembers = () => {
-  return (
-    <div className="mb-40">
+  useEffect(() =>{
+    AOS.init();
+   }, [])
 
-<div className="text-center mb-14">
+  return (
+    <div className="mb-48">
+
+<div className=" bg-slate-200 lg:w-1/2 w-3/4 mx-auto px-3 py-5 text-center mb-20" data-aos="fade-down">
         <h2 className="text-indigo-700 font-bold text-xl mb-2">TEAM MEMBERS</h2>
-        <h1 className="font-bold lg:text-3xl text-xl mb-4 text-gray-700">
+        <h1 className="font-bold lg:text-3xl text-2xl mb-4 text-gray-700">
         Professional Stuffs Always Ready to <br />
         Satisfy Our Customer With Their Unique Skills
         </h1>
@@ -19,7 +24,7 @@ const TeamMembers = () => {
       </div>
 
       <Marquee>
-      <div className="card w-96 bg-base-100 shadow-xl mr-28">
+      <div className="card w-96 bg-base-100 shadow-xl mr-28 ">
   <figure><img src={teamOne} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">Michael Thompson</h2>
@@ -27,7 +32,7 @@ const TeamMembers = () => {
   </div>
 </div>
 
-<div className="card w-96 bg-base-100 shadow-xl mr-28">
+<div className="card w-96 bg-base-100 shadow-xl mr-28 ">
   <figure><img src={teamTwo} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">Emily Johnson</h2>
@@ -35,7 +40,7 @@ const TeamMembers = () => {
   </div> 
 </div>
 
-<div className="card w-96 bg-base-100 shadow-xl mr-96">
+<div className="card w-96 bg-base-100 shadow-xl mr-28 ">
   <figure><img src={teamThree} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">David Rodriguez</h2>

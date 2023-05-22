@@ -3,14 +3,23 @@ import useTitle from '../UseTitle/UseTitle';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import Select from 'react-select';
+
+
+const options =[
+  { value: "price", label: "Lowest to Highest" },
+  { value: "price", label: "Highest to Lowest" },
+]
 
 const MyToy = () => {
     useTitle('MyToy')
     const{user} = useContext(AuthContext)
     const[myToys, setMyToys] = useState([])
+    const [selectedOption, setSelectedOption] = useState('');
+
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`https://toy-universe-server-gamma.vercel.app/myToys/${user?.email}`)
         .then(res => res.json())
         .then(data => setMyToys(data))
     } ,[user])
@@ -28,7 +37,7 @@ const MyToy = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-             fetch(`http://localhost:5000/myToys/${_id}`,{
+             fetch(`https://toy-universe-server-gamma.vercel.app/myToys/${_id}`,{
                  method: "DELETE"
                
              })
@@ -49,13 +58,27 @@ const MyToy = () => {
           })
     }
 
+
+
+
     return (
         <div className="w-max mx-auto ">
       
       <h2 className="text-center font-bold text-3xl text-gray-600 mt-20 mb-3">My Toy Page</h2>
       <p className="text-center text-lg text-gray-500 mb-12">This is your personal toy collection page</p>
 
-     
+      <div className="form-control mb-24 w-1/5">
+
+                  <label className="label">
+                    <span className="label-text text-lg text-gray-700 font-semibold ">Sub-category</span>
+                  </label>
+                  <Select
+                    defaultValue={selectedOption}
+                    onChange={setSelectedOption}
+                    options={options}
+                  />
+                
+                </div>
 
       <div className="w-full mb-40">
         <table className="table w-full">
