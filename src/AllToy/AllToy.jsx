@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useTitle from "../UseTitle/UseTitle";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link,  } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const AllToy = () => {
   useTitle("AllToy");
-  const toys = useLoaderData();
+  const {user} =useContext(AuthContext)
+  const [toys, setToys] = useState([]);
+  const [searchText, setSearchText] = useState("")
+
+  useEffect(() => {
+    fetch('http://localhost:5000/addToys')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setToys(data);
+      });
+  }, [user]);
+
+const handleSearch = () =>{
+  fetch(`http://localhost:5000/toySearchByText/${searchText}`)
+  .then(res => res.json())
+  .then((data) => {
+    setToys(data)
+  })
+}
+
+
   return (
     <div className="w-3/4 mx-auto ">
       
@@ -12,8 +34,13 @@ const AllToy = () => {
       <p className="text-center text-lg text-gray-500 mb-12">Here you can see the all toys that are added by seller</p>
 
       <div className="relative w-1/2 mx-auto mb-8">
-        <input type="text" placeholder="Search By Name" className="input input-bordered w-full pr-16" /> 
-        <button className="btn btn-primary absolute top-0 right-0 rounded-l-none">Subscribe</button>
+        <input 
+        onChange={(e) => setSearchText(e.target.value)}
+        type="text" 
+        placeholder="Search By Name" 
+        className="input input-bordered w-full pr-16" /> 
+
+        <button onClick={handleSearch} className="btn btn-primary absolute top-0 right-0 rounded-l-none">Search</button>
       </div>
 
       <div className="w-full mb-40">

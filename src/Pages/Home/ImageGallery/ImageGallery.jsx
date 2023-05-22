@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 const ImageGallery = () => {
   const [galleries, setGalleries] = useState([]);
-
+ useEffect(() =>{
+  AOS.init();
+ }, [])
   useEffect(() => {
     fetch("http://localhost:5000/photos")
       .then((res) => res.json())
@@ -11,7 +14,7 @@ const ImageGallery = () => {
   }, []);
   return (
     <div className="mt-20">
-      <div className="text-center">
+      <div className="text-center bg-slate-200 w-1/2 mx-auto py-5" data-aos="fade-right">
         <h2 className="font-bold text-3xl mb-4 text-gray-700">
           Our Toys Photo Gallery
         </h2>

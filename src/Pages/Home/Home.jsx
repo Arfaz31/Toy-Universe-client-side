@@ -4,6 +4,7 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import PricingPlan from './PricingPlans/PricingPlan';
 import TeamMembers from './TeamMembers/TeamMembers';
 import useTitle from '../../UseTitle/UseTitle';
+import ReactTab from './ReactTab';
 
 const Home = () => {
     useTitle('Home')
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
             <Banner/>
             <ImageGallery/>
+            <ReactTab/>
             <PricingPlan/>
             <TeamMembers/>
         </div>
